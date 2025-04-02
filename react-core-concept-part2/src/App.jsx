@@ -2,6 +2,7 @@ import reactLogo from './assets/react.svg';
 import './App.css';
 import Counter from './Counter';
 import Batsman from './Batsman';
+import Users from './Users';
 
 function App() {
   function handleClick() {
@@ -49,8 +50,9 @@ function App() {
         <button onClick={() => handleClick5(5)}>No.5</button>
       </div>
 
-      {/* <Counter></Counter> */}
+      <Counter></Counter>
       <Batsman></Batsman>
+      <Users></Users>
     </>
   );
 }
