@@ -8,7 +8,9 @@ export default function Posts({ published }) {
   return (
     <div className="universe-border">
       <h2>All Post:{posts.length}</h2>
-      {(posts.map = post => <Post post={post}></Post>)}
+      {posts.map(post => (
+        <Post key={post.id} post={post}></Post>
+      ))}
     </div>
   );
 }

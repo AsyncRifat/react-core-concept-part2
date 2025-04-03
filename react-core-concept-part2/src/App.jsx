@@ -6,6 +6,7 @@ import Users from './Users';
 import { Suspense } from 'react';
 import Friends from './Friends';
 import Posts from './Posts';
+import Albums from './Albums';
 
 // const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users').then(
 //   res => res.json()
@@ -16,14 +17,20 @@ import Posts from './Posts';
 //   return res.json();
 // };
 
-const posts = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+// const posts = async () => {
+//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   return res.json();
+// };
+
+const fetchAlbums = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/albums');
   return res.json();
 };
 
 function App() {
   // const friendsPromise = fetchFriends();
-  const published = posts();
+  // const published = posts();
+  const albums = fetchAlbums();
 
   function handleClick() {
     alert('i am clicker');
@@ -76,10 +83,13 @@ function App() {
 
       {/* <Counter></Counter>
       <Batsman></Batsman> */}
-
-      <Suspense fallback={<p>Post coming</p>}>
-        <Posts published={published}></Posts>
+      <Suspense fallback={<p>waiting...</p>}>
+        <Albums albums={albums}></Albums>
       </Suspense>
+
+      {/* <Suspense fallback={<p>Post coming</p>}>
+        <Posts published={published}></Posts>
+      </Suspense> */}
 
       {/* <Suspense fallback={<p>Writing massage...</p>}>
         <Friends friendsPromise={friendsPromise}></Friends>
