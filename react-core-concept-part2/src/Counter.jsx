@@ -12,6 +12,10 @@ export default function Counter() {
     const newCount = count - 1;
     setCount(newCount);
   };
+  const handleReset = () => {
+    const newCount = 0;
+    setCount(newCount);
+  };
 
   const counterStyle = {
     border: '1.5px solid aqua',
@@ -25,7 +29,10 @@ export default function Counter() {
       <button style={{ marginRight: '10px' }} onClick={handleAdd}>
         Plus
       </button>
-      <button onClick={handleClose}>Minus</button>
+      <button style={{ marginRight: '10px' }} onClick={handleClose}>
+        Minus
+      </button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }

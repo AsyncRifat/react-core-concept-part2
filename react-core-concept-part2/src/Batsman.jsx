@@ -20,6 +20,10 @@ export default function Batsman() {
     const totalSixes = sixes + 1;
     setSixes(totalSixes);
   };
+  const handleTarget = () => {
+    const target = runs;
+    setRuns(target)
+  };
 
   return (
     <div
@@ -34,9 +38,11 @@ export default function Batsman() {
       {runs > 50 && <p>Your score: Fifty</p>}
       <h3>Score:{runs}</h3>
       <p>Six: {sixes}</p>
+      <p>Target:{runs}</p>
       <button onClick={handleSingles}>1</button>
       <button onClick={handleFour}>4</button>
       <button onClick={handleSix}>6</button>
+      <button onClick={handleTarget}>Target</button>
     </div>
   );
 }
